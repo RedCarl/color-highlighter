@@ -36,6 +36,9 @@ object ColorSearchEngine {
   /** List of color patterns. Currently unused. */
   @Suppress("unused")
   private val COLOR_PATTERNS = listOf(
+    Pattern.compile("<#\\p{XDigit}{6}>"),  // 匹配 <#RRGGBB>
+    Pattern.compile("<#\\p{XDigit}{3}>"),   // 匹配 <#RGB>
+    Pattern.compile("<[a-zA-Z]+>"),
     Pattern.compile(
       "((#\\p{XDigit}{6}\\b)|(#\\p{XDigit}{3}\\b))"
     ),  // #123456 or #333
